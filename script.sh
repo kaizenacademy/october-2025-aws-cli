@@ -12,7 +12,6 @@ subnet1_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block $subnet1_cidr -
 subnet2_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block $subnet2_cidr --region $region --query Subnet.SubnetId --output text)
 subnet3_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block $subnet3_cidr --region $region --query Subnet.SubnetId --output text)
 
-
 igw_id=$(aws ec2 create-internet-gateway --region $region --query InternetGateway.InternetGatewayId --output text)
 
 aws ec2 attach-internet-gateway --vpc-id $vpc_id --internet-gateway-id $igw_id --region $region
